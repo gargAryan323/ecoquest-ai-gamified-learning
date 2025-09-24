@@ -15,6 +15,12 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        // Eco variants for EcoQuest platform
+        hero: "bg-eco-gradient text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0",
+        quest: "bg-gradient-to-r from-eco-primary to-eco-accent text-white hover:from-eco-accent hover:to-eco-primary transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg",
+        nature: "bg-eco-nature text-white hover:bg-eco-nature/90 shadow-md hover:shadow-lg transition-all duration-300",
+        earth: "bg-eco-earth text-white hover:bg-eco-earth/90 shadow-md hover:shadow-lg transition-all duration-300",
+        glow: "bg-primary text-primary-foreground hover:bg-primary/90 relative before:absolute before:-inset-1 before:bg-gradient-to-r before:from-primary before:to-accent before:rounded-lg before:blur before:opacity-30 before:-z-10 hover:before:opacity-50 transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",
