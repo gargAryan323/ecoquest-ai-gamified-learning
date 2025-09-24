@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import { useAuth } from '@/hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 import { 
   Menu, 
   X, 
@@ -11,7 +13,8 @@ import {
   BookOpen, 
   Users, 
   Settings,
-  User
+  User,
+  LogOut
 } from 'lucide-react';
 
 const navItems = [
@@ -24,6 +27,13 @@ const navItems = [
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, signOut } = useAuth();
+  const navigate = useNavigate();
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate('/auth');
+  };
 
   return (
     <>
@@ -69,14 +79,29 @@ export default function Navigation() {
 
             {/* User Actions */}
             <div className="flex items-center space-x-3">
-              <div className="hidden sm:flex items-center space-x-2 bg-eco-gradient rounded-full px-4 py-2">
-                <div className="w-2 h-2 bg-eco-nature rounded-full animate-pulse-eco" />
-                <span className="text-white text-sm font-medium">1,250 Eco Points</span>
-              </div>
-              
-              <Button variant="ghost" size="icon" className="rounded-full">
-                <User className="w-5 h-5" />
-              </Button>
+              {user ? (
+                <>
+                  <div className="hidden sm:flex items-center space-x-2 bg-eco-gradient rounded-full px-4 py-2">
+                    <div className="w-2 h-2 bg-eco-nature rounded-full animate-pulse-eco" />
+                    <span className="text-white text-sm font-medium">1,250 Eco Points</span>
+                  </div>
+                  
+                  <Button variant="ghost" size="icon" className="rounded-full">
+                    <User className="w-5 h-5" />
+                  </Button>
+
+                  <Button variant="ghost" size="icon" className="rounded-full" onClick={handleSignOut}>
+                    <LogOut className="w-5 h-5" />
+                  </Button>
+                </>
+              ) : (
+                <Button 
+                  onClick={() => navigate('/auth')}
+                  className="bg-eco-gradient hover:opacity-90 text-white"
+                >
+                  Join EcoQuest
+                </Button>
+              )}
 
               {/* Mobile Menu Button */}
               <Button

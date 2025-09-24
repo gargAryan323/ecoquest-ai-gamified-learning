@@ -14,7 +14,66 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          badges_earned: string[] | null
+          bio: string | null
+          carbon_footprint_saved: number
+          created_at: string
+          display_name: string | null
+          eco_points: number
+          grade_level: string | null
+          id: string
+          level: number
+          location: string | null
+          school_name: string | null
+          streak_days: number
+          total_quests_completed: number
+          updated_at: string
+          user_id: string
+          username: string | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          badges_earned?: string[] | null
+          bio?: string | null
+          carbon_footprint_saved?: number
+          created_at?: string
+          display_name?: string | null
+          eco_points?: number
+          grade_level?: string | null
+          id?: string
+          level?: number
+          location?: string | null
+          school_name?: string | null
+          streak_days?: number
+          total_quests_completed?: number
+          updated_at?: string
+          user_id: string
+          username?: string | null
+        }
+        Update: {
+          avatar_url?: string | null
+          badges_earned?: string[] | null
+          bio?: string | null
+          carbon_footprint_saved?: number
+          created_at?: string
+          display_name?: string | null
+          eco_points?: number
+          grade_level?: string | null
+          id?: string
+          level?: number
+          location?: string | null
+          school_name?: string | null
+          streak_days?: number
+          total_quests_completed?: number
+          updated_at?: string
+          user_id?: string
+          username?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
