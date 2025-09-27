@@ -18,14 +18,19 @@ import {
 } from 'lucide-react';
 
 const navItems = [
-  { icon: Home, label: 'Dashboard', href: '#dashboard' },
+  { icon: Home, label: 'Dashboard', view: 'dashboard' },
+  { icon: Trophy, label: 'Quizzes', view: 'quizzes' },
   { icon: Map, label: 'Quests', href: '#quests' },
-  { icon: Trophy, label: 'Leaderboard', href: '#leaderboard' },
   { icon: BookOpen, label: 'Learning', href: '#learning' },
   { icon: Users, label: 'Community', href: '#community' },
 ];
 
-export default function Navigation() {
+interface NavigationProps {
+  currentView?: string;
+  setCurrentView?: (view: string) => void;
+}
+
+export default function Navigation({ currentView = 'dashboard', setCurrentView }: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
@@ -62,18 +67,22 @@ export default function Navigation() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-1">
               {navItems.map((item, index) => (
-                <motion.a
+                <motion.button
                   key={item.label}
-                  href={item.href}
+                  onClick={() => item.view ? setCurrentView?.(item.view) : document.querySelector(item.href!)?.scrollIntoView({ behavior: 'smooth' })}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.3 }}
                   whileHover={{ scale: 1.05 }}
-                  className="flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-all duration-200"
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    currentView === item.view 
+                      ? 'bg-primary/10 text-primary' 
+                      : 'text-foreground hover:bg-primary/10 hover:text-primary'
+                  }`}
                 >
                   <item.icon className="w-4 h-4" />
                   <span>{item.label}</span>
-                </motion.a>
+                </motion.button>
               ))}
             </div>
 
@@ -86,7 +95,12 @@ export default function Navigation() {
                     <span className="text-white text-sm font-medium">1,250 Eco Points</span>
                   </div>
                   
-                  <Button variant="ghost" size="icon" className="rounded-full">
+                  <Button 
+                    variant="ghost" 
+                    size="icon" 
+                    className="rounded-full"
+                    onClick={() => setCurrentView?.('profile')}
+                  >
                     <User className="w-5 h-5" />
                   </Button>
 
@@ -129,18 +143,28 @@ export default function Navigation() {
           >
             <div className="p-6 space-y-4">
               {navItems.map((item, index) => (
-                <motion.a
+                <motion.button
                   key={item.label}
-                  href={item.href}
+                  onClick={() => {
+                    if (item.view) {
+                      setCurrentView?.(item.view);
+                    } else {
+                      document.querySelector(item.href!)?.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    setIsOpen(false);
+                  }}
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.3 }}
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center space-x-3 p-3 rounded-xl hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
+                  className={`w-full flex items-center space-x-3 p-3 rounded-xl transition-all duration-200 group ${
+                    currentView === item.view 
+                      ? 'bg-primary/10 text-primary' 
+                      : 'hover:bg-primary/10 hover:text-primary'
+                  }`}
                 >
                   <item.icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
                   <span className="font-medium">{item.label}</span>
-                </motion.a>
+                </motion.button>
               ))}
               
               <div className="pt-4 border-t border-border">

@@ -6,65 +6,65 @@
 
 @layer base {
   :root {
-    /* Eco Background System */
-    --background: 120 25% 98%;
-    --foreground: 158 64% 12%;
+    /* Modern Vibrant Background System */
+    --background: 220 15% 97%;
+    --foreground: 240 12% 15%;
 
-    /* Card System with Nature Tones */
-    --card: 120 20% 99%;
-    --card-foreground: 158 64% 12%;
+    /* Card System with Clean Aesthetics */
+    --card: 0 0% 100%;
+    --card-foreground: 240 12% 15%;
 
     /* Popover System */
-    --popover: 120 20% 99%;
-    --popover-foreground: 158 64% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 12% 15%;
 
-    /* Primary Eco Green System */
-    --primary: 142 76% 36%;
-    --primary-foreground: 120 25% 98%;
-    --primary-glow: 142 76% 56%;
+    /* Primary Vibrant Teal System */
+    --primary: 180 98% 42%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 180 85% 55%;
 
-    /* Secondary Ocean Blue System */
-    --secondary: 197 71% 52%;
-    --secondary-foreground: 120 25% 98%;
+    /* Secondary Electric Purple System */
+    --secondary: 270 75% 60%;
+    --secondary-foreground: 0 0% 100%;
     
-    /* Muted Earth Tones */
-    --muted: 120 20% 94%;
-    --muted-foreground: 158 25% 40%;
+    /* Muted Modern Grays */
+    --muted: 220 14% 96%;
+    --muted-foreground: 240 5% 50%;
 
-    /* Accent Forest Green */
-    --accent: 134 61% 41%;
-    --accent-foreground: 120 25% 98%;
+    /* Accent Bright Orange */
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
 
-    /* Destructive Warning Red */
+    /* Destructive Vibrant Red */
     --destructive: 0 84% 60%;
-    --destructive-foreground: 120 25% 98%;
+    --destructive-foreground: 0 0% 100%;
 
     /* Border and Input System */
-    --border: 120 20% 88%;
-    --input: 120 20% 94%;
-    --ring: 142 76% 36%;
+    --border: 220 13% 91%;
+    --input: 220 14% 96%;
+    --ring: 180 98% 42%;
 
-    /* Eco Color Palette */
-    --eco-primary: 142 76% 36%;
-    --eco-secondary: 197 71% 52%;
-    --eco-accent: 134 61% 41%;
-    --eco-nature: 82 84% 67%;
-    --eco-earth: 39 85% 59%;
-    --eco-sky: 197 92% 81%;
-    --eco-leaf: 92 84% 69%;
+    /* Modern Eco Color Palette */
+    --eco-primary: 180 98% 42%;
+    --eco-secondary: 270 75% 60%;
+    --eco-accent: 25 95% 53%;
+    --eco-nature: 140 80% 55%;
+    --eco-earth: 35 85% 65%;
+    --eco-sky: 200 90% 70%;
+    --eco-leaf: 120 75% 60%;
     
-    /* Gradients */
-    --gradient-eco-primary: linear-gradient(135deg, hsl(142 76% 36%), hsl(134 61% 41%));
-    --gradient-eco-hero: linear-gradient(135deg, hsl(142 76% 36%), hsl(197 71% 52%));
-    --gradient-eco-card: linear-gradient(145deg, hsl(120 25% 98%), hsl(120 20% 96%));
-    --gradient-eco-button: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
-    --gradient-eco-glow: radial-gradient(circle, hsl(142 76% 56% / 0.3), transparent 70%);
+    /* Modern Vibrant Gradients */
+    --gradient-eco-primary: linear-gradient(135deg, hsl(180 98% 42%), hsl(140 80% 55%));
+    --gradient-eco-hero: linear-gradient(135deg, hsl(180 98% 42%), hsl(270 75% 60%));
+    --gradient-eco-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14% 96%));
+    --gradient-eco-button: linear-gradient(135deg, hsl(180 98% 42%), hsl(180 85% 55%));
+    --gradient-eco-glow: radial-gradient(circle, hsl(180 85% 55% / 0.3), transparent 70%);
     
-    /* Shadows with Eco Colors */
-    --shadow-eco-soft: 0 4px 20px hsl(142 76% 36% / 0.1);
-    --shadow-eco-medium: 0 8px 30px hsl(142 76% 36% / 0.15);
-    --shadow-eco-strong: 0 20px 40px hsl(142 76% 36% / 0.2);
-    --shadow-eco-glow: 0 0 30px hsl(142 76% 56% / 0.4);
+    /* Modern Shadows */
+    --shadow-eco-soft: 0 4px 20px hsl(180 98% 42% / 0.12);
+    --shadow-eco-medium: 0 8px 30px hsl(180 98% 42% / 0.18);
+    --shadow-eco-strong: 0 20px 40px hsl(180 98% 42% / 0.25);
+    --shadow-eco-glow: 0 0 30px hsl(180 85% 55% / 0.4);
 
     /* Animation Variables */
     --transition-eco: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -90,41 +90,41 @@
   }
 
   .dark {
-    /* Dark Mode Eco Theme */
-    --background: 158 84% 8%;
-    --foreground: 120 25% 95%;
+    /* Dark Mode Modern Theme */
+    --background: 240 12% 8%;
+    --foreground: 220 15% 95%;
 
-    --card: 158 50% 12%;
-    --card-foreground: 120 25% 95%;
+    --card: 240 8% 12%;
+    --card-foreground: 220 15% 95%;
 
-    --popover: 158 50% 12%;
-    --popover-foreground: 120 25% 95%;
+    --popover: 240 8% 12%;
+    --popover-foreground: 220 15% 95%;
 
-    --primary: 142 76% 46%;
-    --primary-foreground: 158 84% 8%;
-    --primary-glow: 142 76% 66%;
+    --primary: 180 90% 48%;
+    --primary-foreground: 240 12% 8%;
+    --primary-glow: 180 85% 65%;
 
-    --secondary: 197 71% 42%;
-    --secondary-foreground: 120 25% 95%;
+    --secondary: 270 70% 65%;
+    --secondary-foreground: 240 12% 8%;
 
-    --muted: 158 25% 18%;
-    --muted-foreground: 120 15% 65%;
+    --muted: 240 6% 18%;
+    --muted-foreground: 220 8% 65%;
 
-    --accent: 134 61% 51%;
-    --accent-foreground: 158 84% 8%;
+    --accent: 25 90% 58%;
+    --accent-foreground: 240 12% 8%;
 
-    --destructive: 0 84% 50%;
-    --destructive-foreground: 120 25% 95%;
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 220 15% 95%;
 
-    --border: 158 25% 20%;
-    --input: 158 25% 18%;
-    --ring: 142 76% 46%;
+    --border: 240 6% 20%;
+    --input: 240 6% 18%;
+    --ring: 180 90% 48%;
 
     /* Dark Mode Gradients */
-    --gradient-eco-primary: linear-gradient(135deg, hsl(142 76% 46%), hsl(134 61% 51%));
-    --gradient-eco-hero: linear-gradient(135deg, hsl(142 76% 46%), hsl(197 71% 42%));
-    --gradient-eco-card: linear-gradient(145deg, hsl(158 50% 12%), hsl(158 25% 18%));
-    --gradient-eco-glow: radial-gradient(circle, hsl(142 76% 66% / 0.2), transparent 70%);
+    --gradient-eco-primary: linear-gradient(135deg, hsl(180 90% 48%), hsl(140 75% 60%));
+    --gradient-eco-hero: linear-gradient(135deg, hsl(180 90% 48%), hsl(270 70% 65%));
+    --gradient-eco-card: linear-gradient(145deg, hsl(240 8% 12%), hsl(240 6% 18%));
+    --gradient-eco-glow: radial-gradient(circle, hsl(180 85% 65% / 0.2), transparent 70%);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
