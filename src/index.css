@@ -18,21 +18,21 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 12% 15%;
 
-    /* Primary Vibrant Teal System */
-    --primary: 180 98% 42%;
+    /* Primary Blue System */
+    --primary: 216 87% 53%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 180 85% 55%;
+    --primary-glow: 216 75% 65%;
 
-    /* Secondary Electric Purple System */
-    --secondary: 270 75% 60%;
+    /* Secondary Blue System */
+    --secondary: 216 60% 70%;
     --secondary-foreground: 0 0% 100%;
     
     /* Muted Modern Grays */
     --muted: 220 14% 96%;
     --muted-foreground: 240 5% 50%;
 
-    /* Accent Bright Orange */
-    --accent: 25 95% 53%;
+    /* Accent Blue */
+    --accent: 216 87% 53%;
     --accent-foreground: 0 0% 100%;
 
     /* Destructive Vibrant Red */
@@ -44,27 +44,27 @@
     --input: 220 14% 96%;
     --ring: 180 98% 42%;
 
-    /* Modern Eco Color Palette */
-    --eco-primary: 180 98% 42%;
-    --eco-secondary: 270 75% 60%;
-    --eco-accent: 25 95% 53%;
-    --eco-nature: 140 80% 55%;
-    --eco-earth: 35 85% 65%;
-    --eco-sky: 200 90% 70%;
-    --eco-leaf: 120 75% 60%;
+    /* Modern Blue Color Palette */
+    --eco-primary: 216 87% 53%;
+    --eco-secondary: 216 60% 70%;
+    --eco-accent: 216 87% 53%;
+    --eco-nature: 216 75% 65%;
+    --eco-earth: 216 60% 70%;
+    --eco-sky: 216 87% 53%;
+    --eco-leaf: 216 75% 65%;
     
-    /* Modern Vibrant Gradients */
-    --gradient-eco-primary: linear-gradient(135deg, hsl(180 98% 42%), hsl(140 80% 55%));
-    --gradient-eco-hero: linear-gradient(135deg, hsl(180 98% 42%), hsl(270 75% 60%));
+    /* Modern Blue Gradients */
+    --gradient-eco-primary: linear-gradient(135deg, hsl(216 87% 53%), hsl(216 75% 65%));
+    --gradient-eco-hero: linear-gradient(135deg, hsl(216 87% 53%), hsl(216 60% 70%));
     --gradient-eco-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14% 96%));
-    --gradient-eco-button: linear-gradient(135deg, hsl(180 98% 42%), hsl(180 85% 55%));
-    --gradient-eco-glow: radial-gradient(circle, hsl(180 85% 55% / 0.3), transparent 70%);
+    --gradient-eco-button: linear-gradient(135deg, hsl(216 87% 53%), hsl(216 75% 65%));
+    --gradient-eco-glow: radial-gradient(circle, hsl(216 75% 65% / 0.3), transparent 70%);
     
     /* Modern Shadows */
-    --shadow-eco-soft: 0 4px 20px hsl(180 98% 42% / 0.12);
-    --shadow-eco-medium: 0 8px 30px hsl(180 98% 42% / 0.18);
-    --shadow-eco-strong: 0 20px 40px hsl(180 98% 42% / 0.25);
-    --shadow-eco-glow: 0 0 30px hsl(180 85% 55% / 0.4);
+    --shadow-eco-soft: 0 4px 20px hsl(216 87% 53% / 0.12);
+    --shadow-eco-medium: 0 8px 30px hsl(216 87% 53% / 0.18);
+    --shadow-eco-strong: 0 20px 40px hsl(216 87% 53% / 0.25);
+    --shadow-eco-glow: 0 0 30px hsl(216 75% 65% / 0.4);
 
     /* Animation Variables */
     --transition-eco: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -100,17 +100,17 @@
     --popover: 240 8% 12%;
     --popover-foreground: 220 15% 95%;
 
-    --primary: 180 90% 48%;
+    --primary: 216 80% 58%;
     --primary-foreground: 240 12% 8%;
-    --primary-glow: 180 85% 65%;
+    --primary-glow: 216 70% 70%;
 
-    --secondary: 270 70% 65%;
+    --secondary: 216 55% 75%;
     --secondary-foreground: 240 12% 8%;
 
     --muted: 240 6% 18%;
     --muted-foreground: 220 8% 65%;
 
-    --accent: 25 90% 58%;
+    --accent: 216 80% 58%;
     --accent-foreground: 240 12% 8%;
 
     --destructive: 0 84% 55%;
@@ -118,13 +118,13 @@
 
     --border: 240 6% 20%;
     --input: 240 6% 18%;
-    --ring: 180 90% 48%;
+    --ring: 216 80% 58%;
 
     /* Dark Mode Gradients */
-    --gradient-eco-primary: linear-gradient(135deg, hsl(180 90% 48%), hsl(140 75% 60%));
-    --gradient-eco-hero: linear-gradient(135deg, hsl(180 90% 48%), hsl(270 70% 65%));
+    --gradient-eco-primary: linear-gradient(135deg, hsl(216 80% 58%), hsl(216 70% 70%));
+    --gradient-eco-hero: linear-gradient(135deg, hsl(216 80% 58%), hsl(216 55% 75%));
     --gradient-eco-card: linear-gradient(145deg, hsl(240 8% 12%), hsl(240 6% 18%));
-    --gradient-eco-glow: radial-gradient(circle, hsl(180 85% 65% / 0.2), transparent 70%);
+    --gradient-eco-glow: radial-gradient(circle, hsl(216 70% 70% / 0.2), transparent 70%);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
