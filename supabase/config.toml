@@ -1,1 +1,13 @@
 project_id = "igvqzwsezjcrzizdfatx"
+
+[functions.complete-quiz]
+verify_jwt = false
+
+[functions.start-challenge]
+verify_jwt = false
+
+[functions.complete-challenge]
+verify_jwt = false
+
+[functions.log-activity]
+verify_jwt = false
