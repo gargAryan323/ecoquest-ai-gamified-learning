@@ -14,6 +14,132 @@ export type Database = {
   }
   public: {
     Tables: {
+      activities: {
+        Row: {
+          carbon_impact_per_action: number | null
+          category: string
+          created_at: string
+          description: string | null
+          icon: string | null
+          id: string
+          is_active: boolean
+          name: string
+          points_per_action: number
+          unit: string | null
+        }
+        Insert: {
+          carbon_impact_per_action?: number | null
+          category?: string
+          created_at?: string
+          description?: string | null
+          icon?: string | null
+          id?: string
+          is_active?: boolean
+          name: string
+          points_per_action?: number
+          unit?: string | null
+        }
+        Update: {
+          carbon_impact_per_action?: number | null
+          category?: string
+          created_at?: string
+          description?: string | null
+          icon?: string | null
+          id?: string
+          is_active?: boolean
+          name?: string
+          points_per_action?: number
+          unit?: string | null
+        }
+        Relationships: []
+      }
+      badges: {
+        Row: {
+          category: string
+          created_at: string
+          description: string
+          icon: string | null
+          id: string
+          is_active: boolean
+          name: string
+          points_required: number | null
+          rarity: string
+          requirements: Json
+        }
+        Insert: {
+          category?: string
+          created_at?: string
+          description: string
+          icon?: string | null
+          id?: string
+          is_active?: boolean
+          name: string
+          points_required?: number | null
+          rarity?: string
+          requirements: Json
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string
+          icon?: string | null
+          id?: string
+          is_active?: boolean
+          name?: string
+          points_required?: number | null
+          rarity?: string
+          requirements?: Json
+        }
+        Relationships: []
+      }
+      challenges: {
+        Row: {
+          badge_reward: string | null
+          carbon_impact: number | null
+          category: string
+          created_at: string
+          description: string
+          difficulty: string
+          duration_days: number | null
+          id: string
+          is_active: boolean
+          points_reward: number
+          requirements: Json | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          badge_reward?: string | null
+          carbon_impact?: number | null
+          category?: string
+          created_at?: string
+          description: string
+          difficulty?: string
+          duration_days?: number | null
+          id?: string
+          is_active?: boolean
+          points_reward?: number
+          requirements?: Json | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          badge_reward?: string | null
+          carbon_impact?: number | null
+          category?: string
+          created_at?: string
+          description?: string
+          difficulty?: string
+          duration_days?: number | null
+          id?: string
+          is_active?: boolean
+          points_reward?: number
+          requirements?: Json | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -74,12 +200,249 @@ export type Database = {
         }
         Relationships: []
       }
+      quiz_attempts: {
+        Row: {
+          answers: Json
+          completed_at: string
+          id: string
+          points_earned: number
+          quiz_id: string
+          score: number
+          time_taken: number | null
+          total_questions: number
+          user_id: string
+        }
+        Insert: {
+          answers: Json
+          completed_at?: string
+          id?: string
+          points_earned?: number
+          quiz_id: string
+          score?: number
+          time_taken?: number | null
+          total_questions: number
+          user_id: string
+        }
+        Update: {
+          answers?: Json
+          completed_at?: string
+          id?: string
+          points_earned?: number
+          quiz_id?: string
+          score?: number
+          time_taken?: number | null
+          total_questions?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "quiz_attempts_quiz_id_fkey"
+            columns: ["quiz_id"]
+            isOneToOne: false
+            referencedRelation: "quizzes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      quizzes: {
+        Row: {
+          category: string
+          created_at: string
+          description: string | null
+          difficulty: string
+          id: string
+          is_active: boolean
+          points_reward: number
+          questions: Json
+          time_limit: number | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          difficulty?: string
+          id?: string
+          is_active?: boolean
+          points_reward?: number
+          questions: Json
+          time_limit?: number | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          difficulty?: string
+          id?: string
+          is_active?: boolean
+          points_reward?: number
+          questions?: Json
+          time_limit?: number | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      user_activities: {
+        Row: {
+          activity_id: string
+          carbon_saved: number | null
+          id: string
+          logged_at: string
+          notes: string | null
+          points_earned: number
+          quantity: number
+          user_id: string
+          verified_at: string | null
+          verified_by: string | null
+        }
+        Insert: {
+          activity_id: string
+          carbon_saved?: number | null
+          id?: string
+          logged_at?: string
+          notes?: string | null
+          points_earned?: number
+          quantity?: number
+          user_id: string
+          verified_at?: string | null
+          verified_by?: string | null
+        }
+        Update: {
+          activity_id?: string
+          carbon_saved?: number | null
+          id?: string
+          logged_at?: string
+          notes?: string | null
+          points_earned?: number
+          quantity?: number
+          user_id?: string
+          verified_at?: string | null
+          verified_by?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_activities_activity_id_fkey"
+            columns: ["activity_id"]
+            isOneToOne: false
+            referencedRelation: "activities"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_badges: {
+        Row: {
+          badge_id: string
+          earned_at: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          badge_id: string
+          earned_at?: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          badge_id?: string
+          earned_at?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_badges_badge_id_fkey"
+            columns: ["badge_id"]
+            isOneToOne: false
+            referencedRelation: "badges"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_challenge_progress: {
+        Row: {
+          carbon_saved: number | null
+          challenge_id: string
+          completed_at: string | null
+          id: string
+          points_earned: number | null
+          progress: Json | null
+          started_at: string
+          status: string
+          user_id: string
+        }
+        Insert: {
+          carbon_saved?: number | null
+          challenge_id: string
+          completed_at?: string | null
+          id?: string
+          points_earned?: number | null
+          progress?: Json | null
+          started_at?: string
+          status?: string
+          user_id: string
+        }
+        Update: {
+          carbon_saved?: number | null
+          challenge_id?: string
+          completed_at?: string | null
+          id?: string
+          points_earned?: number | null
+          progress?: Json | null
+          started_at?: string
+          status?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_challenge_progress_challenge_id_fkey"
+            columns: ["challenge_id"]
+            isOneToOne: false
+            referencedRelation: "challenges"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
-      [_ in never]: never
+      leaderboard: {
+        Row: {
+          avatar_url: string | null
+          badge_names: string[] | null
+          carbon_footprint_saved: number | null
+          display_name: string | null
+          eco_points: number | null
+          level: number | null
+          rank: number | null
+          streak_days: number | null
+          total_quests_completed: number | null
+          user_id: string | null
+          username: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
-      [_ in never]: never
+      award_badge_to_user: {
+        Args: { p_badge_name: string; p_user_id: string }
+        Returns: boolean
+      }
+      calculate_user_level: {
+        Args: { points: number }
+        Returns: number
+      }
+      update_user_stats: {
+        Args: {
+          p_carbon_saved?: number
+          p_points_to_add?: number
+          p_quest_completed?: boolean
+          p_user_id: string
+        }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never
