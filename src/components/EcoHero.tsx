@@ -4,7 +4,6 @@ import { OrbitControls, Sphere, Float, Text3D } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Leaf, Zap, Users, Target } from 'lucide-react';
-import Spline from '@splinetool/react-spline';
 import ecoHeroImage from '@/assets/eco-hero-image.jpg';
 
 // Animated 3D Earth Component
@@ -155,13 +154,8 @@ export default function EcoHero() {
             </Canvas>
 
             {/* Floating UI Elements */}
-            <div className="absolute top-4 left-4 bg-white/20 backdrop-blur-sm rounded-lg p-2 text-white text-sm animate-pulse-eco overflow-hidden">
-              <div className="flex items-center gap-2 mb-2">
-                🌱 <span>AI Learning Active</span>
-              </div>
-              <div className="w-32 h-24 rounded overflow-hidden">
-                <Spline scene="https://prod.spline.design/rEBdBpLoScJI4yvr8hbStY1l/scene.splinecode" />
-              </div>
+            <div className="absolute top-4 left-4 bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 text-white text-sm animate-pulse-eco">
+              🌱 AI Learning Active
             </div>
             <div className="absolute bottom-4 right-4 bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 text-white text-sm animate-float-eco">
               🌍 Global Impact: 2.5M Trees
